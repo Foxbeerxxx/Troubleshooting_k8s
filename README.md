@@ -12,14 +12,28 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 у меня ругается, что нет namespaces web и data
 ```
-
+![1](https://github.com/Foxbeerxxx/Troubleshooting_k8s/blob/main/img/img1.png)
 
 2. `Создаю namespaces web и data`
 ```
 kubectl create namespace web
 kubectl create namespace data
+и пробую снова установить
 ```
-3. `Заполните здесь этапы выполнения, если требуется ....`
+![2](https://github.com/Foxbeerxxx/Troubleshooting_k8s/blob/main/img/img2.png)
+
+
+
+3. `Диагностика`
+
+```
+kubectl -n web logs deploy/web-consumer | head
+kubectl -n data get svc auth-db 
+```
+![3](https://github.com/Foxbeerxxx/Troubleshooting_k8s/blob/main/img/img3.png)
+
+
+
 4. `Заполните здесь этапы выполнения, если требуется ....`
 5. `Заполните здесь этапы выполнения, если требуется ....`
 6. 
@@ -33,7 +47,7 @@ kubectl create namespace data
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
+`
 
 
 ---
